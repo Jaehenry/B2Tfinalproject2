@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> aadeli</title>
+	<style type="text/css">
+		table, th, td {
+			border: 1px solid black; 
+			text-align: :center
+
+ 		}
+	</style>
+</head>
+
+<body>
+<body style="font-size: 40px; margin: 55px;">
+
+<h1 style="color:red;">Jake's Deli</h1>
+
+		<!--Create Input Boxes-->
+		Enter Name:
+		<input type="text" id="col1">
+		and Order
+		<input type="text" id="col2">
+
+		<!--Create buttons-->
+		<input type="button" value="Click to add Customer to queue" onclick="ins()">
+		<br><br><br>
+		Custormer Served:
+		<input type="button" value="Customer Served" id="col3" onclick="del()">
+		<br>
+		<br><br>
+		<!--Table Heading-->
+		<table id="myT" style="width: 50%">
+		<tr>
+			<th>Pos.</th>
+			<th>Name</th>
+			<th>Order</th>
+		</tr>
+
+
+			<tr id="tr2">
+				<td colspan="3" style="text-align: center; color:white;background-color: limegreen">There are no customers waiting</td>
+			<th, td{
+				text-align;
+				padding: 8px;
+				tr: nth-child(even) {background- color: grey
+				}
+			}
+
+			</tr>
+			</table>
+
+		<script type="text/javascript">
+			
+			var num = document.getElementById("myT").rows.length;
+			var cnt = num-2;
+
+			function countFun() {
+				cnt=parseInt(cnt)+parseInt(1);
+				return cnt;
+
+			}
+
+			function del() {
+				document.getElementById("myT").deleteRow(2)
+				var num = document.getElementById("myT").rows.length;
+				if (num==2) {
+					document.getElementById("tr2").style.display="";
+					cnt=countFun()-parseInt(-1);
+
+				}
+
+			}
+			function ins() {
+				var table = document.getElementById("myT");
+				var data1;
+				var data2 = document.getElementById("col1").value;
+				var data3 = document.getElementById("col2").value;
+
+				document.getElementById("tr2").style.display="none";
+
+				var tr = document.createElement("tr")
+				var td1 = document.createElement("td")
+				var td2 = document.createElement("td")
+				var td3 = document.createElement("td")
+
+				
+				td1.innerHTML = countFun();
+				td2.innerHTML = data2;
+				td3.innerHTML = data3;
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				table.appendChild(tr);
+				
+			}
+
+
+
+		</script>
+
+		<!--Copy from one field to the next -->
+		<!--<button onclick="myFunction()">Copy Text</button>
+
+<script>
+function myFunction() {
+    document.getElementById("field2").value = document.getElementById("field1").value;
+}
+</script>-->
+
+
+
+
+
+</body>
+</html> 
